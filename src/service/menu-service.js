@@ -7,13 +7,13 @@ const prisma = new PrismaClient()
 const createMenu = async (request, file) => {
     const menu = validate(createMenuValidation, request);
 
-    const countUser = await prisma.menu.count({
+    const countMenu = await prisma.menu.count({
         where: {
             name: menu.name
         }
     });
 
-    if (countUser === 1) {
+    if (countMenu === 1) {
         throw new ResponseError(400, "Menu already exists");
     }
 

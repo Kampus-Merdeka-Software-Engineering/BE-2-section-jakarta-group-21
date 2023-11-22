@@ -24,11 +24,21 @@ model User {
 model Menu {
   id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(100)
-  description String? @db.VarChar(100)
+  description String? @db.Text
   price       String  @db.VarChar(100)
   stok        String  @db.VarChar(100)
   image       String  @db.VarChar(100)
   category    String  @db.VarChar(100)
 
   @@map("menu")
+}
+
+model Testimoni {
+  id          Int    @id @default(autoincrement())
+  name        String @db.VarChar(100)
+  description String @db.Text
+  image       String @db.VarChar(100)
+  rating      String @db.VarChar(100)
+
+  @@map("testimoni")
 }

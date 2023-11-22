@@ -14,11 +14,22 @@ CREATE TABLE `users` (
 CREATE TABLE `menu` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
-    `description` VARCHAR(100) NULL,
+    `description` TEXT NULL,
     `price` VARCHAR(100) NOT NULL,
     `stok` VARCHAR(100) NOT NULL,
     `image` VARCHAR(100) NOT NULL,
     `category` VARCHAR(100) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `testimoni` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL,
+    `description` TEXT NOT NULL,
+    `image` VARCHAR(100) NOT NULL,
+    `rating` VARCHAR(100) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

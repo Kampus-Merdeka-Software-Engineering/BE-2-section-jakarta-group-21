@@ -8,12 +8,12 @@ Headers :
 - Authorization : token
 
 Query form-data :
-- name: Coca Cola
-- description: Optional description
-- price: 10000
-- stok: 12
+- name: Tuna Pizza and Black Olive
+- description: This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.
+- price: 189000
+- stok: 50
+- category: Popular Dishes
 - image: menu_image.jpg
-- category: Drink
 
 
 Response Body Success :
@@ -22,12 +22,12 @@ Response Body Success :
 {
   "data": {
         "id": 1,
-        "name": "Coca Cola",
-        "description": null,
-        "price": "10000",
-        "stok": "12",
-        "category": "Drink",
-        "image": "1700416199436.png"
+        "name": "Tuna Pizza and Black Olive",
+        "description": "This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.",
+        "price": "189000",
+        "stok": "50",
+        "category": "Popular Dishes",
+        "image": "1700585005428.png"
     }
 }
 ```
@@ -53,21 +53,21 @@ Response Body Success :
 {
   "data" : {
         "id": 1,
-        "name": "Coca Cola",
-        "description": null,
-        "price": "10000",
-        "stok": "12",
-        "category": "Drink",
-        "image": "1700416199436.png"
+        "name": "Tuna Pizza and Black Olive",
+        "description": "This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.",
+        "price": "189000",
+        "stok": "50",
+        "category": "Popular Dishes",
+        "image": "1700585005428.png"
     },
     {
         "id": 2,
-        "name": "Pizza California",
-        "description": null,
-        "price": "180000",
-        "stok": "20",
-        "category": "Pizza",
-        "image": "1700416100436.png"
+        "name": "Sprinkles Love pizza",
+        "description": "This is our special menu, apart from its very artistic shape and the taste combined with cheese and tomatoes is something interesting.",
+        "price": "200000",
+        "stok": "50",
+        "category": "Popular Dishes",
+        "image": "1700585357517.png"
     }
 }
 ```
@@ -89,12 +89,12 @@ Headers :
 - Authorization : token
 
 Query form-data :
-- name: Coca Cola
-- description: Optional description
-- price: 10000
-- stok: 12
+- name: Tuna Pizza and Black Olive
+- description: This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.
+- price: 189000
+- stok: 50
+- category: Popular Dishes
 - image: menu_image.jpg
-- category: Drink
 
 
 Response Body Success :
@@ -103,12 +103,12 @@ Response Body Success :
 {
   "data": {
         "id": 1,
-        "name": "Coca Cola",
-        "description": null,
-        "price": "10000",
-        "stok": "12",
-        "category": "Drink",
-        "image": "1700416199436.png"
+        "name": "Tuna Pizza and Black Olive",
+        "description": "This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.",
+        "price": "189000",
+        "stok": "50",
+        "category": "Popular Dishes",
+        "image": "1700585005428.png"
     }
 }
 ```
@@ -134,12 +134,12 @@ Response Body Success :
 {
   "data" : {
         "id": 1,
-        "name": "Coca Cola",
-        "description": null,
-        "price": "10000",
-        "stok": "12",
-        "category": "Drink",
-        "image": "1700416199436.png"
+        "name": "Tuna Pizza and Black Olive",
+        "description": "This dreamy tuna pizza with red onions and black olives is inspired by a traditional Italian recipe. Light and delicious, this pizza is also high in protein.",
+        "price": "189000",
+        "stok": "50",
+        "category": "Popular Dishes",
+        "image": "1700585005428.png"
     }
 }
 ```

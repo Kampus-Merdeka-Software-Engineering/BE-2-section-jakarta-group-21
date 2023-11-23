@@ -3,7 +3,7 @@ import menuService from "../service/menu-service.js";
 const createMenu = async (req, res, next) => {
     try {
         const result = await menuService.createMenu(req.body, req.file);
-        res.status(200).json({
+        res.status(201).json({
             data: result
         });
     } catch (error) {
@@ -16,7 +16,7 @@ const deleteMenu = async (req, res, next) => {
         const menuId = req.params.menuId;
         await menuService.deleteMenu(menuId);
         res.status(200).json({
-            data: "OK"
+            data: "Delete Success"
         })
     } catch (error) {
         next(error)
@@ -38,7 +38,7 @@ const updateMenu = async (req, res, next) => {
     try {
         const menuId = req.params.menuId;
         const result = await menuService.updateMenu(menuId, req.body, req.file);
-        res.status(200).json({
+        res.status(201).json({
             data: result
         });
     } catch (error) {
@@ -58,10 +58,23 @@ const menu = async (req, res, next) => {
     }
 }
 
+const cari = async (req, res, next) => {
+    try {
+        const { q } = req.query;
+        const result = await menuService.cariMenu(q);
+        res.status(200).json({
+            data: result
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
 export default {
     createMenu,
     deleteMenu,
     menus,
     updateMenu,
-    menu
+    menu,
+    cari
 }

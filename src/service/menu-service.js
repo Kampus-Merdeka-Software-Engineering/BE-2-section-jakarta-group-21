@@ -53,7 +53,12 @@ const deleteMenu = async (menuId) => {
 }
 
 const menus = async () => {
-    return await prisma.menu.findMany();
+
+    const menu = await prisma.menu.findMany();
+    if (menu.length === 0) {
+        throw new ResponseError(404, "Menu is not found");
+    }
+    return menu;
 }
 
 const updateMenu = async (menuId, data, file) => {
@@ -104,11 +109,36 @@ const menu = async (menuId) => {
     return menu;
 }
 
+const cariMenu = async (query) => {
+    const search = await prisma.menu.findMany({
+        where: {
+            OR: [
+                {
+                    name: {
+                        contains: query
+                    }
+                },
+                {
+                    category: {
+                        contains: query
+                    }
+                },
+            ]
+        }
+    });
+
+    if (!search) {
+        throw new ResponseError(404, "Menu is not found");
+    }
+    return search;
+}
+
 export default {
     createMenu,
     deleteMenu,
     menus,
     updateMenu,
-    menu
+    menu,
+    cariMenu
 
 }

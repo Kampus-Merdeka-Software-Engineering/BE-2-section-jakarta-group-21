@@ -22,7 +22,6 @@ export const authentication = async (req, res, next) => {
                     token: token
                 }
             });
-            console.log(user)
             if (!user) {
                 res.status(401).json({
                     errors: "Unauthorized"

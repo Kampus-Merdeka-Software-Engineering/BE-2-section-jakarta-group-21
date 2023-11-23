@@ -14,8 +14,8 @@ app.use(userRouter);
 
 app.use(errorMiddleware);
 
-app.listen(process.env.port, () => {
-    console.log(`port berjalan di http://localhost:${process.env.port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`port berjalan di http://localhost:${process.env.PORT}`);
 });
 
 

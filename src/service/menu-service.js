@@ -75,6 +75,10 @@ const updateMenu = async (menuId, data, file) => {
         throw new ResponseError(404, "Menu is not found");
     }
 
+    if (menuDatabase) {
+        const oldImage = path.join('uploads/menu/', menuDatabase.image);
+        await unlink(oldImage);
+    }
 
 
     const updatedMenu = validate(updateMenuValidation, { ...menuDatabase, ...data });

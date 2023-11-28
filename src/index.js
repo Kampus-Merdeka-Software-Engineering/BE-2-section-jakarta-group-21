@@ -4,11 +4,13 @@ import { publicRouter } from "../src/route/public-api.js";
 import { errorMiddleware } from "../src/middleware/error-middleware.js";
 import dotenv from "dotenv/config";
 import { userRouter } from "./route/api.js";
+import cors from "cors"
 
 export const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cors())
 app.use(publicRouter);
 app.use(userRouter);
 

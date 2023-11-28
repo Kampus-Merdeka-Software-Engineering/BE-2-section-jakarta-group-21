@@ -195,8 +195,64 @@ async function main() {
         },
     ];
 
+    const tabelTestimoni = [
+        {
+            id: 1,
+            name: "Anthony David Alexander",
+            description: "The sensation of vegetable pizza for me is amazing and very suitable for a healthy lifestyle",
+            image: "1701164042979.png",
+            rating: "lima"
+        },
+        {
+            id: 2,
+            name: "Audrey Carol",
+            description: "The taste is very good and so is the service. I ordered a classic pizza which was amazing. My sister had amazing pasta",
+            image: "1701164520038.png",
+            rating: "lima"
+        },
+        {
+            id: 3,
+            name: "Ryna Azura Dacota",
+            description: "This place has become one of my favorite places because the menu served really makes me happy",
+            image: "1701164693651.png",
+            rating: "empat"
+        },
+        {
+            id: 4,
+            name: "Carolina Gracella",
+            description: "I really recomend, It was late at night and we were hungry. They make it perfect. Hot and delicious. Very polite for late night orders!",
+            image: "1701164851745.png",
+            rating: "lima"
+        },
+        {
+            id: 5,
+            name: "Danielle Marsh",
+            description: "Affordable, the taste so good and i think yous should try it.",
+            image: "1701164964344.png",
+            rating: "empat"
+        },
+        {
+            id: 6,
+            name: "Karina Claudia",
+            description: "This pizza is perfect for celebrating with family and friends, I really like the classic pizza.",
+            image: "1701165120841.png",
+            rating: "lima"
+        },
+        {
+            id: 7,
+            name: "Felix Hann",
+            description: "I was recommended by my office friend, and I think this pizza is very delicious.",
+            image: "1701165225382.png",
+            rating: "empat"
+        },
+    ];
+
     await prisma.menu.createMany({
         data: tableMenu,
+    });
+
+    await prisma.testimoni.createMany({
+        data: tabelTestimoni,
     });
 }
 

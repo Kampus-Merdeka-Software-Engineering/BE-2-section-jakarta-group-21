@@ -4,6 +4,7 @@
 ## Search Contact API
 
 Endpoint : GET /api/cari
+
 Endpoint : GET /api-public/cari (Tidak Perlu Login)
 
 Headers :
@@ -89,6 +90,7 @@ Response Body Error :
 ## Get Menu API
 
 Endpoint : GET /api/menu
+
 Endpoint : GET /api-public/menu (Tidak perlu login)
 
 Headers :
@@ -171,6 +173,7 @@ Response Body Error :
 ## Get Menu API By Id
 
 Endpoint : GET /api/menu/:id
+
 Endpoint : GET /api-public/menu/:id (tidak perlu login)
 
 Headers :

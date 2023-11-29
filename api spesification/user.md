@@ -2,7 +2,7 @@
 
 ## Register User API
 
-Endpoint :  POST /api/register 
+Endpoint :  POST /api-public/register 
 
 Request Body :
 
@@ -38,7 +38,7 @@ Response Body Error :
 
 ## Login User API
 
-Endpoint : POST /api/login
+Endpoint : POST /api-public/login
 
 Request Body :
 

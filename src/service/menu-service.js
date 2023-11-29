@@ -48,6 +48,11 @@ const deleteMenu = async (menuId) => {
         throw new ResponseError(404, "menu is not found");
     }
 
+    if (menuDatabase) {
+        const oldImage = path.join('uploads/menu/', menuDatabase.image);
+        await unlink(oldImage);
+    }
+
     return await prisma.menu.delete({
         where: {
             id: parseInt(menuId)

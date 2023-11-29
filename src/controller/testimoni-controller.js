@@ -34,8 +34,21 @@ const testimoniDelete = async (req, res, next) => {
     }
 }
 
+const testimoniUpdate = async (req, res, next) => {
+    try {
+        const { testimoniId } = req.params;
+        const result = await testimoniService.updateTestimoni(req.body, testimoniId, req.file);
+        res.status(201).json({
+            data: result
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
 export default {
     createTestimoni,
     testimoni,
-    testimoniDelete
+    testimoniDelete,
+    testimoniUpdate
 }

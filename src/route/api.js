@@ -30,6 +30,7 @@ userRouter.get('/api/cari', menuController.cari);
 userRouter.post('/api/testimoni', uploadImageTestimoni, testimoniController.createTestimoni);
 userRouter.get('/api/testimoni', testimoniController.testimoni);
 userRouter.delete('/api/testimoni/:testimoniId', testimoniController.testimoniDelete);
+userRouter.put('/api/testimoni/:testimoniId', uploadImageTestimoni, testimoniController.testimoniUpdate);
 
 export {
     userRouter

@@ -8,7 +8,8 @@ import {
     uploadTestimoni,
 } from "../middleware/upload-middleware.js";
 
-const uploadImageMenu = uploadMenu.single('image');
+// Ini untuk local jika tidak menggunakan imgBB
+// const uploadImageMenu = uploadMenu.single('image');
 const uploadImageTestimoni = uploadTestimoni.single('image');
 
 const userRouter = new express.Router();
@@ -19,10 +20,10 @@ userRouter.get('/api/users/current', userController.getUser);
 userRouter.delete('/api/users/logout', userController.logout);
 
 // Menu API
-userRouter.post('/api/menu', uploadImageMenu, menuController.createMenu);
+userRouter.post('/api/menu', uploadMenu, menuController.createMenu);
 userRouter.delete('/api/menu/:menuId', menuController.deleteMenu);
 userRouter.get('/api/menu', menuController.menus);
-userRouter.put('/api/menu/:menuId', uploadImageMenu, menuController.updateMenu);
+// userRouter.put('/api/menu/:menuId', uploadImageMenu, menuController.updateMenu);
 userRouter.get('/api/menu/:menuId', menuController.menu);
 userRouter.get('/api/cari', menuController.cari);
 

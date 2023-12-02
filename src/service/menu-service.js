@@ -4,8 +4,29 @@ import { createMenuValidation, updateMenuValidation } from "../validation/menu-v
 import { PrismaClient } from '@prisma/client'
 import path from 'path';
 import { unlink } from 'fs/promises';
+import axios from 'axios';
 
 const prisma = new PrismaClient()
+
+
+const uploadImageToImgBB = async (file) => {
+
+    const imgbbApiKey = '67451670967551642fdc92c6963422fc';
+
+    const formData = new FormData();
+    formData.append('image', file.buffer.toString('base64'));
+
+    return await axios.post('https://api.imgbb.com/1/upload', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+        params: {
+            key: imgbbApiKey,
+        },
+    });
+}
+
+
 
 const createMenu = async (request, file) => {
     const menu = validate(createMenuValidation, request);
@@ -17,10 +38,13 @@ const createMenu = async (request, file) => {
     });
 
     if (countMenu === 1) {
-        throw new ResponseError(400, "Menu already exists");
+        throw new ResponseError(404, "Menu already exists");
     }
 
-    menu.image = file.filename;
+    // ini untuk upload di local jangan di hapus
+    // menu.image = file.filename;
+
+    menu.image = file.data.data.url;
 
     return await prisma.menu.create({
         data: menu,
@@ -153,6 +177,7 @@ export default {
     menus,
     updateMenu,
     menu,
-    cariMenu
+    cariMenu,
+    uploadImageToImgBB
 
 }

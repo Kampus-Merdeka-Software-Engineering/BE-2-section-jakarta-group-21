@@ -2,7 +2,8 @@ import menuService from "../service/menu-service.js";
 
 const createMenu = async (req, res, next) => {
     try {
-        const result = await menuService.createMenu(req.body, req.file);
+        const imgbbImage = await menuService.uploadImageToImgBB(req.file);
+        const result = await menuService.createMenu(req.body, imgbbImage);
         res.status(201).json({
             data: result
         });

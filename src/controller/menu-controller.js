@@ -38,7 +38,8 @@ const menus = async (req, res, next) => {
 const updateMenu = async (req, res, next) => {
     try {
         const menuId = req.params.menuId;
-        const result = await menuService.updateMenu(menuId, req.body, req.file);
+        const imgbbImage = await menuService.uploadImageToImgBB(req.file);
+        const result = await menuService.updateMenu(menuId, req.body, imgbbImage);
         res.status(201).json({
             data: result
         });

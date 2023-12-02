@@ -2,7 +2,8 @@ import testimoniService from "../service/testimoni-service.js";
 
 const createTestimoni = async (req, res, next) => {
     try {
-        const result = await testimoniService.createTestimoni(req.body, req.file);
+        const imgBBImage = await testimoniService.uploadImageToImgBB(req.file)
+        const result = await testimoniService.createTestimoni(req.body, imgBBImage);
         res.status(201).json({
             data: result
         });
@@ -37,7 +38,8 @@ const testimoniDelete = async (req, res, next) => {
 const testimoniUpdate = async (req, res, next) => {
     try {
         const { testimoniId } = req.params;
-        const result = await testimoniService.updateTestimoni(req.body, testimoniId, req.file);
+        const imgBBImage = await testimoniService.uploadImageToImgBB(req.file)
+        const result = await testimoniService.updateTestimoni(req.body, testimoniId, imgBBImage);
         res.status(201).json({
             data: result
         })

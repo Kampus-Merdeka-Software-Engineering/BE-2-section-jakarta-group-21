@@ -72,10 +72,12 @@ const deleteMenu = async (menuId) => {
         throw new ResponseError(404, "menu is not found");
     }
 
-    if (menuDatabase) {
-        const oldImage = path.join('uploads/menu/', menuDatabase.image);
-        await unlink(oldImage);
-    }
+    // Ini untuk hapus file image di local jangan di hapus
+
+    // if (menuDatabase) {
+    //     const oldImage = path.join('uploads/menu/', menuDatabase.image);
+    //     await unlink(oldImage);
+    // }
 
     return await prisma.menu.delete({
         where: {
@@ -104,16 +106,19 @@ const updateMenu = async (menuId, data, file) => {
         throw new ResponseError(404, "Menu is not found");
     }
 
-    if (menuDatabase) {
-        const oldImage = path.join('uploads/menu/', menuDatabase.image);
-        await unlink(oldImage);
-    }
+    // ini untuk hapus file image di loccal jangan di hapus
+
+    // if (menuDatabase) {
+    //     const oldImage = path.join('uploads/menu/', menuDatabase.image);
+    //     await unlink(oldImage);
+    // }
 
 
     const updatedMenu = validate(updateMenuValidation, { ...menuDatabase, ...data });
 
     if (file) {
-        updatedMenu.image = file.filename;
+        // updatedMenu.image = file.filename;
+        updatedMenu.image = file.data.data.url;
     }
 
     return await prisma.menu.update({

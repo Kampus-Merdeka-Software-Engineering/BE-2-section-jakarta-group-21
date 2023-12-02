@@ -4,13 +4,33 @@ import { ResponseError } from '../error/response-error.js'
 import { PrismaClient } from '@prisma/client'
 import path from "path"
 import { unlink } from 'fs/promises'
+import axios from 'axios'
 
 const prisma = new PrismaClient();
 
+const uploadImageToImgBB = async (file) => {
+    const imgbbApiKey = '67451670967551642fdc92c6963422fc';
+
+    const formData = new FormData();
+    formData.append('image', file.buffer.toString('base64'));
+
+    return await axios.post('https://api.imgbb.com/1/upload', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+        params: {
+            key: imgbbApiKey
+        }
+    });
+}
 const createTestimoni = async (request, file) => {
     const testimoni = validate(createValidationTestimoni, request);
 
-    testimoni.image = file.filename;
+    // ini buat upload di local jangan di hapus
+    // testimoni.image = file.filename;
+
+    testimoni.image = file.data.data.url;
+
     return await prisma.testimoni.create({
         data: testimoni,
         select: {
@@ -42,10 +62,11 @@ const deleteTestimoni = async (testimoniId) => {
         throw new ResponseError(404, "Testimoni is not found");
     }
 
-    if (testimoni) {
-        const oldImage = path.join("uploads/testimoni", testimoni.image);
-        await unlink(oldImage);
-    }
+    // Ini untuk hapus file di local jangan di hapus
+    // if (testimoni) {
+    //     const oldImage = path.join("uploads/testimoni", testimoni.image);
+    //     await unlink(oldImage);
+    // }
 
     return await prisma.testimoni.delete({
         where: {
@@ -65,15 +86,18 @@ const updateTestimoni = async (request, testimoniId, file) => {
         throw new ResponseError(404, "Testimoni is not found");
     }
 
-    if (testimoniDatabase) {
-        const oldImage = path.join("uploads/testimoni", testimoniDatabase.image);
-        await unlink(oldImage);
-    }
+    // Ini untuk hapus file di local jika sudah update jangan di hapus
+
+    // if (testimoniDatabase) {
+    //     const oldImage = path.join("uploads/testimoni", testimoniDatabase.image);
+    //     await unlink(oldImage);
+    // }
 
     const update = validate(updateValidationTestimoni, { ...testimoniDatabase, ...request });
 
     if (file) {
-        update.image = file.filename;
+        // update.image = file.filename;
+        update.image = file.data.data.url;
     }
 
     return await prisma.testimoni.update({
@@ -96,5 +120,6 @@ export default {
     createTestimoni,
     testimoni,
     deleteTestimoni,
-    updateTestimoni
+    updateTestimoni,
+    uploadImageToImgBB
 }

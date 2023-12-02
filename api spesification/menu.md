@@ -25,7 +25,7 @@ Response Body Success :
         "price": "189000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585005428.png"
+        "image": "https://i.ibb.co/yVPSdtY/e80edf41a158.png"
     },
     {
         "id": 2,
@@ -34,7 +34,7 @@ Response Body Success :
         "price": "200000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585357517.png"
+        "image": "https://i.ibb.co/T87jDgM/222df3c08452.png"
     }
 }
 ```
@@ -74,7 +74,7 @@ Response Body Success :
         "price": "189000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585005428.png"
+        "image": "https://i.ibb.co/yVPSdtY/e80edf41a158.png"
     }
 }
 ```
@@ -107,7 +107,7 @@ Response Body Success :
         "price": "189000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585005428.png"
+        "image": "https://i.ibb.co/yVPSdtY/e80edf41a158.png"
     },
     {
         "id": 2,
@@ -116,7 +116,7 @@ Response Body Success :
         "price": "200000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585357517.png"
+        "image": "https://i.ibb.co/T87jDgM/222df3c08452.png"
     }
 }
 ```
@@ -157,7 +157,7 @@ Response Body Success :
         "price": "189000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585005428.png"
+        "image": "https://i.ibb.co/yVPSdtY/e80edf41a158.png"
     }
 }
 ```
@@ -190,7 +190,7 @@ Response Body Success :
         "price": "189000",
         "stok": "50",
         "category": "Popular Dishes",
-        "image": "1700585005428.png"
+        "image": "https://i.ibb.co/yVPSdtY/e80edf41a158.png"
     }
 }
 ```

@@ -1,9 +1,9 @@
 
 import express from "express";
-import { publicRouter } from "../src/route/public-api.js";
-import { errorMiddleware } from "../src/middleware/error-middleware.js";
+import { publicRouter } from "./src/route/public-api.js";
+import { errorMiddleware } from "./src/middleware/error-middleware.js";
 import dotenv from "dotenv/config";
-import { userRouter } from "./route/api.js";
+import { userRouter } from "./src/route/api.js";
 import cors from "cors"
 
 export const app = express();

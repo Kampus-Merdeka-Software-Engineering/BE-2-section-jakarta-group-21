@@ -5,13 +5,14 @@ import { PrismaClient } from '@prisma/client'
 import path from 'path';
 import { unlink } from 'fs/promises';
 import axios from 'axios';
+import dotenv from "dotenv/config";
 
 const prisma = new PrismaClient()
 
 
 const uploadImageToImgBB = async (file) => {
 
-    const imgbbApiKey = '67451670967551642fdc92c6963422fc';
+    const imgbbApiKey = process.env.IMGBB_API_KEY;
 
     const formData = new FormData();
     formData.append('image', file.buffer.toString('base64'));

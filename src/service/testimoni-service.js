@@ -10,7 +10,8 @@ import { env } from "process";
 const prisma = new PrismaClient();
 
 const uploadImageToImgBB = async (file) => {
-    const imgbbApiKey = process.env.IMGBB_API_KEY;
+    const imgbbApiKey = '67451670967551642fdc92c6963422fc';
+    // const imgbbApiKey = process.env.IMGBB_API_KEY;
 
     const formData = new FormData();
     formData.append('image', file.buffer.toString('base64'));

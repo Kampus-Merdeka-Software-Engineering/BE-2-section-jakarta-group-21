@@ -55,7 +55,6 @@ const createMenu = async (request, file) => {
             name: true,
             description: true,
             price: true,
-            stok: true,
             category: true,
             image: true
         }

@@ -10,7 +10,14 @@ export const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors())
+
+const corsOption = {
+    origin: 'https://kampus-merdeka-software-engineering.github.io/FE-2-section-jakarta-group-21/',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    optionsSuccessStatus: 204,
+}
+app.use(cors(corsOption))
 app.use(publicRouter);
 app.use(userRouter);
 

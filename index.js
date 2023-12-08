@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const corsOption = {
-    origin: 'https://kampus-merdeka-software-engineering.github.io/FE-2-section-jakarta-group-21/',
+    origin: 'https://kampus-merdeka-software-engineering.github.io/',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     optionsSuccessStatus: 204,
